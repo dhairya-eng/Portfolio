@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhairya Parikh - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="profile"></div>
+        <h1>Dhairya Parikh</h1>
+        <p>Computer Engineering Graduate Student</p>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I am Dhairya Parikh, a Computer Engineering graduate student at Virginia Tech with a strong passion for cybersecurity, machine learning, and network security. With hands-on experience in reinforcement learning-based fuzzing, OPC UA security, and 5G/O-RAN testing, I strive to bridge the gap between research and real-world applications.</p>
+            <p>My expertise lies in designing security frameworks, developing automated testing tools, and integrating machine learning techniques into cybersecurity domains. I have worked as a Graduate Research Assistant at the Commonwealth Cyber Initiative, where I contributed to fuzzing frameworks for ORAN security.</p>
+            <p>In addition to my research, I have industry experience in secure communication protocols, PKI infrastructure, and vulnerability assessment tools. My projects focus on leveraging machine learning for anomaly detection, automated certificate management, and penetration testing.</p>
+            <p>I am always eager to collaborate on challenging cybersecurity projects and contribute to innovative research in securing modern communication networks.</p>
+            <div class="social-links">
+                <p>Connect with me:</p>
+                <a href="https://github.com/dhairya-eng" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/dhairya-parikh-133aba1a7/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:dpparikhinfo@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        
+        </div>
+    </section>
+    
+
+    <section id="education" class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="education-header">
+                    <img src="images/vt.jpeg" alt="Virginia Tech Logo" class="company-logo">
+                    <h3>Virginia Tech</h3>
+                </div>
+                <p class="text-secondary">Master’s in Computer Engineering</p>
+                <p>Expected May 2025<br>
+                GPA: 3.80/4.0<br>
+                Relevant Courses: Machine Learning, Cybersecurity, IoT, Network Architecture</p>
+            </div>
+    
+            <div class="timeline-item">
+                <div class="education-header">
+                    <img src="images/bvm.jpeg" alt="BVM Logo" class="company-logo">
+                    <h3>Birla Vishvakarma Mahavidyalaya</h3>
+                </div>
+                <p class="text-secondary">Bachelor’s in Electronics and Communication Engineering</p>
+                <p>Aug 2019 – May 2023<br>
+                CPI: 3.60/4.0<br>
+                Relevant Courses: Embedded Systems, Object-Oriented Programming, Web Development, Computer Networks</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <!-- CCI Experience -->
+            <div class="timeline-item">
+                <div class="company-header">
+                    <img src="images/cci.png" alt="CCI Logo" class="company-logo">
+                    <h3>Commonwealth Cyber Initiative (CCI) VT, USA</h3>
+                    <p class="text-secondary">Graduate Research Assistant</p>
+                </div>
+                <ul>
+                    <li>Designed and implemented reinforcement learning (RL)-based fuzzer using Q-learning</li>
+                    <li>Built encoders/decoders for message validation in Open Radio Access Networks (ORAN)</li>
+                    <li>Applied fuzzing techniques to identify vulnerabilities in 5G ORAN systems</li>
+                </ul>
+            </div>
+
+            <!-- TMELC Experience -->
+            <div class="timeline-item">
+                <div class="company-header">
+                    <img src="images/TMEIC.jpeg" alt="TMELC Logo" class="company-logo">
+                    <h3>TMELC, USA</h3>
+                    <p class="text-secondary">CO-OP Engineer</p>
+                </div>
+                <ul>
+                    <li>Designed OPC UA Server/Client functionalities using open62541</li>
+                    <li>Integrated syslogs on SIEM tool for security analysis</li>
+                    <li>Built PKI tool for certificate management</li>
+                </ul>
+            </div>
+
+            <!-- ISRO Experience -->
+            <div class="timeline-item">
+                <div class="company-header">
+                    <img src="images/isro.png" alt="ISRO Logo" class="company-logo">
+                    <h3>Indian Space Research Organization (SAC), India</h3>
+                    <p class="text-secondary">Researcher</p>
+                </div>
+                <ul>
+                    <li>Developed automated harness system using Python, Raspberry Pi, and Zigbee</li>
+                    <li>Integrated hardware components for multi-device testing</li>
+                    <li>Created Python-based control interface for real-time monitoring</li>
+                </ul>
+            </div>
+
+            <!-- Bodh Labs Experience -->
+            <div class="timeline-item">
+                <div class="company-header">
+                    <img src="images/bodhlabs.png" alt="Bodh Labs Logo" class="company-logo">
+                    <h3>Bodh Labs, India</h3>
+                    <p class="text-secondary">Web Developer Intern</p>
+                </div>
+                <ul>
+                    <li>Developed features for defense website using React JS and Material UI</li>
+                    <li>Implemented OAuth authentication and admin dashboard</li>
+                    <li>Optimized frontend components and maintained repository</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>GPT Teaching Assistant System</h3>
+                <p>Developed a GPT/LLM-based teaching assistant system to support ECE and CS teaching assistants in interacting with students and obtaining input from the instructor.</p>
+            </div>
+    
+            <div class="project-card">
+                <h3>Automatic Ignition Locking System for Preventing Drunk Driving</h3>
+                <p>Designed and implemented an alcohol detection system using an MQ3 sensor and Arduino Uno to enhance road safety.</p>
+            </div>
+    
+            <div class="project-card">
+                <h3>DNS Attack Project</h3>
+                <p>Configured and executed various DNS attacks, including DNS cache poisoning and spoofing, in a controlled lab environment.</p>
+            </div>
+    
+            <div class="project-card">
+                <h3>ANPR System (Review Work)</h3>
+                <p>Researched the implementation of Automatic Number Plate Recognition (ANPR) systems for toll tax collection and studied YOLO-based methods for character extraction.</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>5G RRC Fuzzing Framework</h3>
+                <p>Developed a Reinforcement learning-driven fuzzing framework targeting RRC messages in OpenAirInterface (OAI) and UERANSIM.</p>
+            </div>
+            
+            <div class="project-card">
+                <h3>PKI Infrastructure Management System</h3>
+                <p>Built a complete Public Key Infrastructure (PKI) system with Flask, enabling certificate generation, revocation, and management.</p>
+            </div>
+    
+            <div class="project-card">
+                <h3>Remote Work Security Assessment</h3>
+                <p>Used Nessus to scan vulnerabilities in VPN configurations and remote desktop access solutions to assess and secure remote work environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section">
+        <h2 class="section-title">Publications</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>5G/O-RAN Security Automated Testing</h3>
+                <p class="text-secondary">IEEE Explore, 2024</p>
+                <p>Research focused on automated security testing methodologies for Open Radio Access Networks (O-RAN), leveraging fuzzing and ML-based anomaly detection.</p>
+                <p><a href="https://ieeexplore.ieee.org/document/10774015" target="_blank">Read More</a></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <script src="script.js" defer>
+       
+    </script>
+</body>
+</html>
