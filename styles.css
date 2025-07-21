@@ -114,10 +114,15 @@ body {
   margin-bottom: 1.5rem;
   position: relative;
 }
-
+.company-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
 .company-logo {
   width: 60px;
-  height: 60px;
+  height: auto;
   object-fit: contain;
   margin-bottom: 1rem;
   border-radius: 8px;
