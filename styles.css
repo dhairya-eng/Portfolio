@@ -188,3 +188,32 @@ body {
       margin: 1.5rem 0;
   }
 }
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.icon-link {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 28px;
+  color: #333;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #0077b5; /* LinkedIn blue */
+  transform: scale(1.2);
+}
+
+.icon-link:nth-child(2):hover {
+  color: #333; /* GitHub */
+}
+
+.icon-link:nth-child(3):hover {
+  color: #d44638; /* Gmail red */
+}
