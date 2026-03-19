@@ -1,86 +1,159 @@
-const projectData = {
-  crowdalpha: {
-    title: "CrowdAlpha – AI Sentiment Trading Platform",
-    desc: "LLM-powered multi-agent trading platform integrating Reddit/YFinance APIs with Alpaca’s paper trading for automated strategy backtesting.",
-    link: "https://github.com/dhairya-eng/CrowdAlpha"
+const projects = [
+  {
+    title: "Apex F1 Atlas",
+    summary: "Interactive Formula 1 dashboard with standings context, race predictions, and telemetry comparisons.",
+    tech: "JavaScript · Data Visualization · APIs",
+    live: "https://apex-f1-atlas.vercel.app/",
+    featured: true
   },
-  ragqa: {
+  {
+    title: "CrowdAlpha",
+    summary: "AI sentiment trading platform integrating market/social signals with strategy workflows.",
+    tech: "LLM Agents · Finance APIs · Python",
+    repo: "https://github.com/dhairya-eng/Crowdalpha"
+  },
+  {
     title: "RAG-Based PDF Q&A",
-    desc: "Built using LangChain, FAISS, and Gemini embeddings to provide 90%+ retrieval accuracy on 100+ page technical documents.",
-    link: "https://github.com/dhairya-eng/LLM-PDFQ-A"
+    summary: "Document Q&A system with vector retrieval and fast semantic search over long PDFs.",
+    tech: "LangChain · FAISS · Gemini",
+    repo: "https://github.com/dhairya-eng/LLM-PDFQ-A"
   },
-  rlenv: {
-    title: "Custom RL Environment for Penetration Testing",
-    desc: "Gym-compatible RL environment simulating multi-stage penetration testing with dynamic reward modeling.",
-    link: "https://github.com/dhairya-eng/Creating-Custom-RL-environment"
+  {
+    title: "GitHub QA Tool",
+    summary: "Chat-based tool for navigating and querying codebases using retrieval and LLM reasoning.",
+    tech: "LLM · Retrieval · Developer Tools",
+    live: "https://huggingface.co/spaces/Dhairya9/chat-your-github-repo"
   },
-  lstmmlp: {
-    title: "LSTM & MLP PyTorch Models",
-    desc: "Developed deep learning models for classification and regression on time-series and tabular datasets with benchmarking.",
-    link: "https://github.com/dhairya-eng/LSTM-and-MLP-Pytorch"
+  {
+    title: "Custom RL Environment",
+    summary: "Gym-compatible penetration-testing simulation environment with reward shaping.",
+    tech: "Reinforcement Learning · Security",
+    repo: "https://github.com/dhairya-eng/Creating-Custom-RL-environment"
   },
-  mnist: {
-    title: "MNIST Digit Classifier",
-    desc: "PyTorch CNN achieving >99% accuracy using data augmentation and batch normalization.",
-    link: "https://github.com/dhairya-eng/MNIST-Pytorch"
+  {
+    title: "LSTM & MLP Models",
+    summary: "Deep learning experiments for time-series and tabular prediction benchmarks.",
+    tech: "PyTorch · Time Series · ML",
+    repo: "https://github.com/dhairya-eng/LSTM-and-MLP-Pytorch"
   },
-  gpt_ta: {
-    title: "GPT Teaching Assistant System",
-    desc: "LLM-based assistant system to support ECE and CS teaching assistants in student interactions.",
-    link: "#"
+  {
+    title: "MNIST Classifier",
+    summary: "CNN pipeline with high-accuracy handwritten digit recognition.",
+    tech: "PyTorch · Computer Vision",
+    repo: "https://github.com/dhairya-eng/MNIST-Pytorch"
   },
-  ignition: {
-    title: "Automatic Ignition Locking System",
-    desc: "Designed an alcohol detection system using MQ3 sensor + Arduino Uno to prevent drunk driving.",
-    link: "#"
+  {
+    title: "RL Fuzzer for UERANSIM",
+    summary: "Adaptive fuzzing framework for security-focused testing in 5G messaging flows.",
+    tech: "RL · 5G Security · Protocol Testing",
+    repo: "https://github.com/dhairya-eng/RL-Fuzzer-UERANSIM"
   },
-  dns: {
-    title: "DNS Attack Project",
-    desc: "Configured and executed DNS cache poisoning and spoofing attacks in lab environment.",
-    link: "#"
-  },
-  anpr: {
-    title: "ANPR System (Review Work)",
-    desc: "Studied YOLO-based ANPR for toll collection and character extraction.",
-    link: "#"
-  },
-  fuzzing: {
-    title: "5G RRC Fuzzing Framework",
-    desc: "RL-driven fuzzing framework targeting RRC messages in OAI and UERANSIM.",
-    link: "#"
-  },
-  pki: {
-    title: "PKI Infrastructure Manager",
-    desc: "Flask-based PKI system for certificate generation, revocation, and lifecycle management.",
-    link: "#"
-  },
-  remote: {
-    title: "Remote Work Security Assessment",
-    desc: "Used Nessus to scan VPN & RDP vulnerabilities and assess remote work security.",
-    link: "#"
-  },
-  ai_assistant: {
-    title: "AI Knowledge Assistant with LangChain",
-    desc: "Built a RAG assistant answering queries from PDF manuals & codebases using Gemini + FAISS.",
-    link: "https://github.com/dhairya-eng/LLM-PDFQ-A"
-  },
-  githubqa: {
-    title: "LLM-Powered GitHub Codebase QA Tool",
-    desc: "Developed chatbot to answer repo questions using LangChain + Gemini with retrieval techniques.",
-    link: "https://huggingface.co/spaces/Dhairya9/chat-your-github-repo"
+  {
+    title: "Travel Decider",
+    summary: "Decision assistant prototype for trip planning based on user constraints.",
+    tech: "Python · Decision Logic",
+    repo: "https://github.com/dhairya-eng/Travel-decider"
   }
-};
+];
 
+function projectCardMarkup(project) {
+  const links = [];
+  if (project.live) {
+    links.push(`<a class="text-link" href="${project.live}" target="_blank" rel="noopener">Live Demo</a>`);
+  }
+  if (project.repo) {
+    links.push(`<a class="text-link" href="${project.repo}" target="_blank" rel="noopener">GitHub</a>`);
+  }
 
-function openProject(key) {
-  const data = projectData[key];
-  if (!data) return;
-  document.getElementById("projTitle").innerText = data.title;
-  document.getElementById("projDesc").innerText = data.desc;
-  document.getElementById("projLink").href = data.link;
-  document.getElementById("projectPopup").style.display = "flex";
+  return `
+    <article class="project-card ${project.featured ? "featured" : ""}">
+      <div class="card-top">
+        <h3>${project.title}</h3>
+        <p>${project.summary}</p>
+        <p class="tech-line">${project.tech}</p>
+      </div>
+      <div class="card-links">
+        ${links.join("")}
+      </div>
+    </article>
+  `;
 }
 
-function closeProject() {
-  document.getElementById("projectPopup").style.display = "none";
+function renderProjects() {
+  const grid = document.getElementById("projectGrid");
+  grid.innerHTML = projects.map(projectCardMarkup).join("");
 }
+
+function setupReveal() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+}
+
+function setupMobileNav() {
+  const button = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  button.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+    button.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("show");
+      button.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+function setupCardTilt() {
+  document.addEventListener("mousemove", (event) => {
+    const cards = document.querySelectorAll(".project-card");
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const inside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+
+      if (!inside) {
+        card.style.transform = "";
+        return;
+      }
+
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const rotateX = ((event.clientY - centerY) / rect.height) * -6;
+      const rotateY = ((event.clientX - centerX) / rect.width) * 6;
+
+      card.style.transform = `perspective(850px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-3px)`;
+    });
+  });
+
+  document.addEventListener("mouseleave", () => {
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.style.transform = "";
+    });
+  });
+}
+
+function setYear() {
+  document.getElementById("year").textContent = new Date().getFullYear();
+}
+
+renderProjects();
+setupReveal();
+setupMobileNav();
+setupCardTilt();
+setYear();
