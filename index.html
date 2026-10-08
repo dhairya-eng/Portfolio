@@ -7,7 +7,7 @@
   <meta name="description" content="Dhairya Parikh - SWE, AI, and cybersecurity engineer portfolio with live projects, publications, and experience.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Sora:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Sora:wght@500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,6 +20,7 @@
       <a class="brand" href="#top">Dhairya Parikh</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">Menu</button>
       <ul class="nav-links" id="navLinks">
+        <li><a href="#recruiter">Recruiter Mode</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -32,8 +33,32 @@
       <p class="eyebrow">SWE • AI • Cybersecurity</p>
       <h1>Building practical AI systems for security, automation, and real-world impact.</h1>
       <p class="hero-copy">
-        Computer Engineering graduate from Virginia Tech (May 2025), currently driving industrial AI and OT-security automation at TMELC.
+        Computer Engineering graduate from Virginia Tech (May 2025), currently driving industrial AI and OT-security automation at TMEIC.
       </p>
+
+      <div class="terminal" id="terminal">
+        <div class="term-bar" aria-hidden="true">
+          <span class="term-dot dot-red"></span>
+          <span class="term-dot dot-yellow"></span>
+          <span class="term-dot dot-green"></span>
+          <span class="term-title">guest@dhairya-portfolio: ~</span>
+        </div>
+        <div class="term-body" id="termBody">
+          <div class="term-output" id="termOutput" role="log" aria-live="polite" aria-label="Terminal output"></div>
+          <form class="term-input-line" id="termForm" autocomplete="off">
+            <label class="term-prompt" for="termInput">guest@dhairya:~$</label>
+            <input class="term-input" id="termInput" type="text" spellcheck="false" autocapitalize="off" autocorrect="off" maxlength="1000" aria-label="Terminal command or question">
+          </form>
+        </div>
+      </div>
+
+      <div class="term-chips" id="termChips" aria-label="Suggested commands">
+        <button type="button" class="term-chip" data-cmd="whoami">whoami</button>
+        <button type="button" class="term-chip" data-cmd="ls projects">ls projects</button>
+        <button type="button" class="term-chip" data-cmd="Is Dhairya a good fit for a security engineering role?">ask: security role fit?</button>
+        <button type="button" class="term-chip" data-cmd="Explain the RL fuzzer he built.">ask: explain the RL fuzzer</button>
+      </div>
+
       <div class="hero-actions">
         <a class="btn btn-primary" href="#projects">View Projects</a>
         <a class="btn btn-ghost" href="https://github.com/dhairya-eng/Resume" target="_blank" rel="noopener">Updated Resume</a>
@@ -47,6 +72,26 @@
   </header>
 
   <main>
+    <section id="recruiter" class="section shell reveal">
+      <div class="section-head">
+        <h2>Recruiter Mode</h2>
+        <p>Paste a job description. An AI checks it against my real experience, including the gaps.</p>
+      </div>
+
+      <form class="jd-panel" id="jdForm">
+        <label class="sr-only" for="jdInput">Job description</label>
+        <textarea id="jdInput" class="jd-input" maxlength="6000" rows="8" placeholder="Paste a job description here..."></textarea>
+        <div class="jd-controls">
+          <button type="button" class="link-btn" id="jdSample">Try a sample JD</button>
+          <span class="jd-counter" id="jdCounter" aria-live="polite">0 / 6000</span>
+          <button type="submit" class="btn btn-primary" id="jdAnalyze">Analyze fit</button>
+        </div>
+        <p class="jd-error" id="jdError" role="alert" hidden></p>
+      </form>
+
+      <div class="jd-result" id="jdResult" aria-live="polite" hidden></div>
+    </section>
+
     <section id="about" class="section shell reveal">
       <h2>About</h2>
       <p>
@@ -67,14 +112,14 @@
     <section id="education" class="section shell reveal">
       <h2>Education</h2>
       <div class="timeline">
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="edu-vt">
           <img src="images/vt.jpeg" alt="Virginia Tech Logo" class="company-logo">
           <div>
             <h3>Virginia Tech</h3>
             <p>Master's in Computer Engineering · Graduated May 2025 · GPA: 3.80/4.0</p>
           </div>
         </article>
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="edu-bvm">
           <img src="images/bvm.jpeg" alt="BVM Logo" class="company-logo">
           <div>
             <h3>Birla Vishvakarma Mahavidyalaya</h3>
@@ -87,10 +132,10 @@
     <section id="experience" class="section shell reveal">
       <h2>Experience</h2>
       <div class="timeline">
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="tmeic">
           <img src="images/TMEIC.jpeg" alt="TMEIC Logo" class="company-logo">
           <div>
-            <h3>TMELC, USA · Process Automation Engineer</h3>
+            <h3>TMEIC, USA · Process Automation Engineer</h3>
             <ul>
               <li>Developing AI models for anomaly detection and predictive maintenance in OT systems.</li>
               <li>Building Python telemetry pipelines for industrial time-series forecasting.</li>
@@ -99,7 +144,7 @@
           </div>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="cci-booz">
           <img src="images/cci.png" alt="CCI Logo" class="company-logo">
           <img src="images/download.png" alt="Booz Allen Logo" class="company-logo small-logo">
           <div>
@@ -112,7 +157,18 @@
           </div>
         </article>
 
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="cci-llm">
+          <img src="images/cci.png" alt="CCI Logo" class="company-logo">
+          <div>
+            <h3>Commonwealth Cyber Initiative · Graduate Researcher</h3>
+            <ul>
+              <li>LLM post-training with RLHF and DPO.</li>
+              <li>Knowledge graphs and recommender systems.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item" data-id="isro">
           <img src="images/isro.png" alt="ISRO Logo" class="company-logo">
           <div>
             <h3>Indian Space Research Organization (SAC), India · Researcher</h3>
@@ -136,7 +192,7 @@
     <section id="opensource" class="section shell reveal">
       <h2>Open Source</h2>
       <div class="project-grid compact-grid">
-        <article class="project-card static-card">
+        <article class="project-card static-card" data-id="docsgpt">
           <div class="card-top">
             <h3>DocsGPT</h3>
             <p>Contributed to the RAG pipeline and integration improvements.</p>
@@ -147,7 +203,7 @@
           </div>
         </article>
 
-        <article class="project-card static-card">
+        <article class="project-card static-card" data-id="llamafarm">
           <div class="card-top">
             <h3>LlamaFarm</h3>
             <p>Developer-experience enhancements and debugging contribution work.</p>
@@ -162,21 +218,21 @@
     <section id="publications" class="section shell reveal">
       <h2>Publications</h2>
       <div class="timeline">
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="pub-ieee-access">
           <div>
             <h3>Reinforcement Learning-Based Fuzzer for 5G RRC Security Evaluation (IEEE Access, 2026)</h3>
             <p>RL-driven fuzzing framework for security evaluation of 5G RRC workflows.</p>
             <a class="text-link" href="https://ieeexplore.ieee.org/document/11424421" target="_blank" rel="noopener">Read Paper</a>
           </div>
         </article>
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="pub-milcom">
           <div>
             <h3>5G/O-RAN Security Automated Testing (MILCOM, 2024)</h3>
             <p>Automated testing architecture for 5G/O-RAN security validation.</p>
             <a class="text-link" href="https://ieeexplore.ieee.org/document/10774015" target="_blank" rel="noopener">Read Paper</a>
           </div>
         </article>
-        <article class="timeline-item">
+        <article class="timeline-item" data-id="pub-thesis">
           <div>
             <h3>Adaptive Reinforcement Learning-Based Fuzzer for 5G RRC Security Evaluation (Virginia Tech, 2025)</h3>
             <p>Master's thesis detailing adaptive RL strategy design for 5G protocol fuzzing.</p>
@@ -201,5 +257,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="terminal.js"></script>
+  <script src="recruiter.js"></script>
 </body>
 </html>

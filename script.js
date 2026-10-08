@@ -1,5 +1,6 @@
 const projects = [
   {
+    id: "apex-f1",
     title: "Apex F1 Atlas",
     summary: "Interactive Formula 1 dashboard with standings context, race predictions, and telemetry comparisons.",
     tech: "JavaScript · Data Visualization · APIs",
@@ -7,48 +8,56 @@ const projects = [
     featured: true
   },
   {
+    id: "crowdalpha",
     title: "CrowdAlpha",
     summary: "AI sentiment trading platform integrating market/social signals with strategy workflows.",
     tech: "LLM Agents · Finance APIs · Python",
     repo: "https://github.com/dhairya-eng/Crowdalpha"
   },
   {
+    id: "rag-pdf",
     title: "RAG-Based PDF Q&A",
     summary: "Document Q&A system with vector retrieval and fast semantic search over long PDFs.",
     tech: "LangChain · FAISS · Gemini",
     repo: "https://github.com/dhairya-eng/LLM-PDFQ-A"
   },
   {
+    id: "github-qa",
     title: "GitHub QA Tool",
     summary: "Chat-based tool for navigating and querying codebases using retrieval and LLM reasoning.",
     tech: "LLM · Retrieval · Developer Tools",
     live: "https://huggingface.co/spaces/Dhairya9/chat-your-github-repo"
   },
   {
+    id: "rl-env",
     title: "Custom RL Environment",
     summary: "Gym-compatible penetration-testing simulation environment with reward shaping.",
     tech: "Reinforcement Learning · Security",
     repo: "https://github.com/dhairya-eng/Creating-Custom-RL-environment"
   },
   {
+    id: "lstm-mlp",
     title: "LSTM & MLP Models",
     summary: "Deep learning experiments for time-series and tabular prediction benchmarks.",
     tech: "PyTorch · Time Series · ML",
     repo: "https://github.com/dhairya-eng/LSTM-and-MLP-Pytorch"
   },
   {
+    id: "mnist",
     title: "MNIST Classifier",
     summary: "CNN pipeline with high-accuracy handwritten digit recognition.",
     tech: "PyTorch · Computer Vision",
     repo: "https://github.com/dhairya-eng/MNIST-Pytorch"
   },
   {
+    id: "rl-fuzzer-ueransim",
     title: "RL Fuzzer for UERANSIM",
     summary: "Adaptive fuzzing framework for security-focused testing in 5G messaging flows.",
     tech: "RL · 5G Security · Protocol Testing",
     repo: "https://github.com/dhairya-eng/RL-Fuzzer-UERANSIM"
   },
   {
+    id: "travel-decider",
     title: "Travel Decider",
     summary: "Decision assistant prototype for trip planning based on user constraints.",
     tech: "Python · Decision Logic",
@@ -66,7 +75,7 @@ function projectCardMarkup(project) {
   }
 
   return `
-    <article class="project-card ${project.featured ? "featured" : ""}">
+    <article class="project-card ${project.featured ? "featured" : ""}" data-id="${project.id}">
       <div class="card-top">
         <h3>${project.title}</h3>
         <p>${project.summary}</p>

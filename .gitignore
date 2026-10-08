@@ -1,0 +1,8 @@
+# Secrets: ANTHROPIC_API_KEY lives only in Vercel env vars / local .env files
+.env*
+
+# Vercel CLI project link
+.vercel
+
+node_modules
+.DS_Store
